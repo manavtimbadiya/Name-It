@@ -1,15 +1,16 @@
 import React from "react";
-import "./ResultsContainer.css"
+import "./ResultsContainer.css";
+import NameCard from "../NameCard/NameCard";
 
 function ResultsContainer ({suggestedNames}) {
-    const suggestNameJsx = suggestedNames ? suggestedNames.map((suggestedName) => {
-        return <p>{suggestedNames}</p> 
-            }) : null ;
-    return (
-        <div className="results-container">
-            <p>{suggestNameJsx}</p>
-        </div>
-    );
+    const suggestedNameJsx = suggestedNames.map(suggestedName =>{
+        return <NameCard key={suggestedName} suggestedName={suggestedName} />
+    });
+   return (
+       <div className="results-container">
+           {suggestedNameJsx}
+       </div>
+   );
 }
 
 export default ResultsContainer;

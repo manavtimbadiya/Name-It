@@ -12,3 +12,4 @@ function SearchBox({onInputChange}) {
 }
 
 export default SearchBox;
+
